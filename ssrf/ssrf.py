@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template_string, escape
 import requests
 
 app = Flask(__name__)
@@ -7,8 +7,7 @@ app = Flask(__name__)
 def follow_url():
     url = request.args.get('url', '')
     if url:
-        return requests.get(url).text
-
+        return escape(requests.get(url).text)
     return "No URL parameter provided."
 
 @app.route('/')
