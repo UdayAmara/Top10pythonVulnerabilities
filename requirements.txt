@@ -3,3 +3,4 @@ requests==2.25.1
 datetime==4.3
 pysqlite3==0.4.6
 Werkzeug==2.2.2
+urllib3>=2.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
